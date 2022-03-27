@@ -15,6 +15,7 @@ const fetchPokemon = () => {
         if (data) {
             console.log(data);
             console.log(pokeName);
+            document.getElementById("pokena").innerHTML = pokeName; 
             let pokeImg = data.sprites.front_default;
             pokeImage(pokeImg);
             console.log(pokeImg);
@@ -23,6 +24,7 @@ const fetchPokemon = () => {
             let poket = data.types[0].type.name;
             pokeType(poket);
             console.log(poket);
+            document.getElementById("poket").innerHTML ="Tipo: " + poket;   
     
             let pokem = data.moves;
             pokeMoves(pokem);
@@ -30,13 +32,13 @@ const fetchPokemon = () => {
             
             for(let i=0; i<6; i++)
             {
-                console.log(i);
                 let pokes = data.stats[i].base_stat;
                 pokeStats(pokes);
                 console.log(pokes); 
                 let poken = data.stats[i].stat.name;
                 pokeStats(poken);
                 console.log(poken); 
+    
             }
         }
     });
